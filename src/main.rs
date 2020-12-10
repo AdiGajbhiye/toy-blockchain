@@ -8,8 +8,10 @@ use chain::Chain;
 use transaction::ROOT_ADDR;
 
 fn main() {
-    let mut chain = Chain::new(ROOT_ADDR, 0);
+    let mut chain = Chain::new(ROOT_ADDR, 2);
     println!("{:#?}", chain);
     chain.add_transaction("sender", "reciever", 50.0);
+    println!("{:#?}", chain);
+    chain.generate_block();
     println!("{:#?}", chain);
 }
